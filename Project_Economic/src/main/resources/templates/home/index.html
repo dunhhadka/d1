@@ -24,7 +24,6 @@
     </head>
 
     <body>
-
         <!-- Nav Bar Start -->
         <div th:fragment="header_home" th:class="fixed-top">
             <div class="nav" th:fragment="navbar">
@@ -37,7 +36,6 @@
 
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto">
-                                <a th:href="@{/api/users/homepage}" class="nav-item nav-link">Home</a>
                                 <a th:href="@{/api/products/all/1}" class="nav-item nav-link">Products</a>
                                 <a href="#" class="nav-item nav-link" onclick="getNumberCartInEveryPage()">Cart</a>
                                 <a th:href="@{/api/users/categories}" class="nav-item nav-link">Cagories</a>
@@ -636,19 +634,19 @@
         <!-- Footer End -->
         
         <!-- Footer Bottom Start -->
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 copyright">
-                        <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
-                    </div>
+<!--        <div class="footer-bottom">-->
+<!--            <div class="container">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-md-6 copyright">-->
+<!--                        <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>-->
+<!--                    </div>-->
 
-                    <div class="col-md-6 template-by">
-                        <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--                    <div class="col-md-6 template-by">-->
+<!--                        <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <!-- Footer Bottom End -->       
         
         <!-- Back to Top -->

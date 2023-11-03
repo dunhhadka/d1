@@ -5,6 +5,7 @@ import com.example.project_economic.response.CartItemResponse;
 import com.example.project_economic.service.CartItemService;
 import com.example.project_economic.service.ProductService;
 import com.example.project_economic.service.UserService;
+import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;

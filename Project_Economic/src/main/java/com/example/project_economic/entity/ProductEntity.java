@@ -17,6 +17,7 @@ public class ProductEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")
     private Long id;
+
     private String name;
     private String description;
     private Double costPrice;
@@ -25,9 +26,11 @@ public class ProductEntity {
     private Integer Likes;
     private String image;
     private String image_type;
+
     @Lob
     @Column(name = "data",columnDefinition = "LONGBLOB")
     private byte[] data;
+
     @ManyToOne(fetch =FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id",referencedColumnName = "category_id")
     private CategoryEntity categoryEntity;

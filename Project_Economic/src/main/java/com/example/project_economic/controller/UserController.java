@@ -125,7 +125,7 @@ public class UserController {
         model.addAttribute("username",principal.getName());
         model.addAttribute("products",this.findByAllProductActive());
         model.addAttribute("numbercart",this.cartItemService.countCart(((UserInfoDetails)(authentication.getPrincipal())).getUserId()));
-        return "home/index";
+        return "home/product-list";
     }
     public List<ProductResponse>findByAllProductActive(){
         return this.productService.findAllIsActived();

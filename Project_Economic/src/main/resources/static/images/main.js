@@ -324,6 +324,19 @@ function getUserNameFromCookie() {
     $('.numbercart').text(numbercart)
 }
 
+function getSave() {
+    var cookies = document.cookie.split(';');
+    var save = '';
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.startsWith('save=')) {
+            save = cookie.substring('save='.length, cookie.length);
+            break;
+        }
+    }
+    return save;
+}
+
 function changeNumberCart(number) {
     document.cookie = "numbercart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     document.cookie = "numbercart=" + number + "; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/"

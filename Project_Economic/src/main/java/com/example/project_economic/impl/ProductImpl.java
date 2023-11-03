@@ -29,10 +29,7 @@ public class ProductImpl implements ProductService {
     @Override
     public List<ProductResponse> findAll() {
         List<ProductEntity>productEntities=this.productRepository.findAll();
-        List<ProductResponse>productDtos=productEntities.stream().map((product)->{
-            return this.enity_to_response(product);
-        }).collect(Collectors.toList());
-        return productDtos;
+        return productEntities.stream().map(this::enity_to_response).collect(Collectors.toList());
     }
 
     @Override

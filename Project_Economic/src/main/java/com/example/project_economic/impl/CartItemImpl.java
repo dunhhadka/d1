@@ -12,6 +12,7 @@ import com.example.project_economic.utils.ProductUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -41,14 +42,19 @@ public class CartItemImpl implements CartItemService {
                     cartItemResponse.setUser(cartITemEntity.getUser());
                     return cartItemResponse;
                 }).collect(Collectors.toList());
+
         return cartItemResponses;
     }
 
     @Override
     public CartItemEntity updateCard(Long cardId, Integer quantity) {
-        CartItemEntity cartItemEntity=this.cartItemRepository.findById(cardId).get();
-        cartItemEntity.setQuantity(quantity);
-        return this.cartItemRepository.save(cartItemEntity);
+        Optional<CartItemEntity> cartItemEntityP =this.cartItemRepository.findById(cardId);
+        if (cartItemEntityP.isPresent()){
+            CartItemEntity cartItemEntity = cartItemEntityP.get();
+            cartItemEntity.setQuantity(quantity);
+            return this.cartItemRepository.save(cartItemEntity);
+        }
+        return null;
     }
 
     @Override
