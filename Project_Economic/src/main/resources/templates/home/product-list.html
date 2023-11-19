@@ -414,7 +414,10 @@
     var username = [[${username}]];
     var userId=[[${userId}]]
     var numbercart=[[${numbercart}]]
+    console.log(getSave())
     if(!getSave()){
+        localStorage.setItem("save" , "isLogin")
+        console.log("userInfo : " , userId, username, numbercart)
         document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         document.cookie = "userId=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         document.cookie = "numbercart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";

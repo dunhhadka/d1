@@ -324,17 +324,20 @@ function getUserNameFromCookie() {
     $('.numbercart').text(numbercart)
 }
 
-function getSave() {
-    var cookies = document.cookie.split(';');
-    var save = '';
+function removeInfo() {
+    localStorage.removeItem("save")
+    var cookies = document.cookie.split(";");
+
     for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i].trim();
-        if (cookie.startsWith('save=')) {
-            save = cookie.substring('save='.length, cookie.length);
-            break;
-        }
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
     }
-    return save;
+    document.cookie = "save" + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+}
+function getSave() {
+    return localStorage.getItem("save") === "isLogin"
 }
 
 function changeNumberCart(number) {
